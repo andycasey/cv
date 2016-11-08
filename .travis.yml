@@ -24,7 +24,7 @@ addons:
             #- texlive-latex-extra
             #- texlive-fonts-recommended
             #- texlive-fonts-extra
-            - texlive
+            - texlive-full
             - texlive-xetex
             #- texlive-math-extra
             #- latex-xcolor
