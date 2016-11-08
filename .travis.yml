@@ -24,6 +24,7 @@ addons:
             - texlive-fonts-recommended
             - texlive-fonts-extra
             - texlive-xetex
+            - texlive-latex-xcolor
             - dvipng
 
 install:
