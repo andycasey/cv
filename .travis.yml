@@ -52,8 +52,11 @@ install:
  - sudo /opt/texbin/tlmgr init-usertree
  - sudo /opt/texbin/tlmgr update --all
  - sudo /opt/texbin/tlmgr update unicode-math
+ - sudo /opt/texbin/tlmgr update xetex
 
 script:
+    - which pdflatex
+    - ls -l /opt/texbin/*
     - make
 
 after_success: |
