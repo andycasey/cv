@@ -19,6 +19,7 @@ env:
 addons:
     apt:
         packages:
+            - lmodern
             - texlive-latex-recommended
             - texlive-latex-extra
             - texlive-fonts-recommended
