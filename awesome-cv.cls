@@ -68,10 +68,11 @@
 \RequirePackage{setspace}
 % Needed to manage fonts
 \RequirePackage[quiet]{fontspec}
+\fontspec[Path = fonts/]{}
 % To support LaTeX quoting style
 \defaultfontfeatures{Ligatures=TeX}
 % Needed to manage math fonts
-%\RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
+\RequirePackage[math-style=TeX,vargreek-shape=unicode]{unicode-math}
 % Needed to use icons from font-awesome
 % (https://github.com/posquit0/latex-fontawesome)
 \RequirePackage{fontawesome}
