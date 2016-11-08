@@ -68,7 +68,7 @@
 \RequirePackage{setspace}
 % Needed to manage fonts
 \RequirePackage[quiet]{fontspec}
-\fontspec[Path = fonts/]{}
+\fontspec[Path = fonts/]{FontAwesome}
 % To support LaTeX quoting style
 \defaultfontfeatures{Ligatures=TeX}
 % Needed to manage math fonts
