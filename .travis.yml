@@ -7,7 +7,7 @@
 
 # This hack has been modified slightly to push pdfs to <branch>-pdf
 
-sudo: true
+sudo: false
 
 language: python
 
@@ -19,13 +19,13 @@ addons:
     apt:
         packages:
             - lmodern
-            #- texlive-latex-recommended
-            #- texlive-latex-extra
-            #- texlive-fonts-recommended
-            #- texlive-fonts-extra
-            #- texlive-xetex
+            - texlive-latex-recommended
+            - texlive-latex-extra
+            - texlive-fonts-recommended
+            - texlive-fonts-extra
+            - texlive-xetex
             #- texlive-full
-            #- ttf-oflb-asana-math
+            - ttf-oflb-asana-math
             #- texlive-math-extra
             #- texlive-xetex
             #- texlive-latex-unicode-math
@@ -33,8 +33,7 @@ addons:
             - dvipng
 
 before_install:
-  - sudo apt-get update -qq
-  - sudo apt-get install -y texlive-full texlive-math-extra ttf-oflb-asana-math
+  - apt-get update -qq
 
 install:
     - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
