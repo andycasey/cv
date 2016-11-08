@@ -19,14 +19,14 @@ addons:
     apt:
         packages:
             - lmodern
-            - texlive-full
-            #- texlive-latex-recommended
-            #- texlive-latex-extra
-            #- texlive-fonts-recommended
-            #- texlive-fonts-extra
+            - texlive-latex-recommended
+            - texlive-latex-extra
+            - texlive-fonts-recommended
+            - texlive-fonts-extra
             - texlive-xetex
             #- texlive-full
             - ttf-oflb-asana-math
+            - latex-xcolor
             #- texlive-math-extra
             #- texlive-xetex
             #- texlive-latex-unicode-math
