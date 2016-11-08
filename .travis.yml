@@ -22,8 +22,8 @@ addons:
             - lmodern
             - texlive-latex-recommended
             - texlive-latex-extra
-            #- texlive-fonts-recommended
-            #- texlive-fonts-extra
+            - texlive-fonts-recommended
+            - texlive-fonts-extra
             #- texlive-full
             #- texlive-xetex
             - texlive-math-extra
