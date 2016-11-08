@@ -24,7 +24,9 @@ addons:
             #- texlive-latex-extra
             #- texlive-fonts-recommended
             #- texlive-fonts-extra
+            - texlive-xetex
             - texlive-full
+            - ttf-oflb-asana-math
             - texlive-math-extra
             - texlive-xetex
             #- texlive-latex-unicode-math
