@@ -7,7 +7,7 @@
 
 # This hack has been modified slightly to push pdfs to <branch>-pdf
 
-sudo: false
+sudo: true
 
 language: python
 
@@ -35,7 +35,7 @@ addons:
             - dvipng
 
 before_install:
-  - apt-get update -qq
+  - sudo apt-get update -qq
 
 install:
     - wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -O miniconda.sh;
