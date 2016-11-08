@@ -1,5 +1,5 @@
-Curriculum Vitae for Andrew R. Casey
-====================================
+Curriculum Vitae
+================
 
 [![Build Status](https://travis-ci.org/andycasey/cv.svg?branch=master)](https://travis-ci.org/andycasey/cv) [![Latest PDF](https://img.shields.io/badge/PDF-latest-orange.svg)](https://github.com/andycasey/cv/blob/master-pdf/cv.pdf)
 
