@@ -27,6 +27,7 @@ addons:
             - texlive-xetex
             - texlive-math-extra
             - latex-xcolor
+            - texlive-latex-unicode-math
             - dvipng
 
 install:
