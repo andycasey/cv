@@ -15,10 +15,12 @@ env:
     matrix:
         - PYTHON_VERSION=2.7
 
+
 addons:
     apt:
         packages:
             - lmodern
+            - texlive-latex-xcolor
             - texlive-latex-recommended
             - texlive-latex-extra
             - texlive-fonts-recommended
@@ -26,7 +28,6 @@ addons:
             - texlive-xetex
             #- texlive-full
             - ttf-oflb-asana-math
-            - latex-xcolor
             #- texlive-math-extra
             #- texlive-xetex
             #- texlive-latex-unicode-math
