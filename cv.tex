@@ -20,6 +20,8 @@
 % A4 paper size by default, use 'letterpaper' for US letter
 \documentclass[11pt, a4paper]{awesome-cv}
 
+\IfFileExists{vc.tex}{\input{vc.tex}}{\newcommand{\githash}{UNKNOWN}\newcommand{\giturl}{UNKNOWN}}
+
 % Configure page margins with geometry
 \geometry{left=1.4cm, top=.8cm, right=1.4cm, bottom=1.8cm, footskip=.5cm}
 
@@ -29,7 +31,7 @@
 % Color for highlights
 % Awesome Colors: awesome-emerald, awesome-skyblue, awesome-red, awesome-pink, awesome-orange
 %                 awesome-nephritis, awesome-concrete, awesome-darknight
-\colorlet{awesome}{awesome-red}
+\colorlet{awesome}{awesome-skyblue}
 % Uncomment if you would like to specify your own color
 % \definecolor{awesome}{HTML}{CA63A8}
 
@@ -51,51 +53,44 @@
 %	PERSONAL INFORMATION
 %	Comment any of the lines below if they are not required
 %-------------------------------------------------------------------------------
-\name{Claud D.}{Park}
-\position{Software Engineer{\enskip\cdotp\enskip}Security Expert}
-\address{246-1002, Gwangmyeongmayrouge Apt. 86, Cheongna lime-ro, Seo-gu, Incheon-si, 404-180, Rep. of KOREA}
-
-\mobile{(+82) 10-9030-1843} 
-\email{posquit0.bj@gmail.com}
-\homepage{www.posquit0.com}
-\github{posquit0}
-\linkedin{posquit0}
+\name{Andrew R.}{Casey}
+\position{Astrophysicist{\enskip\cdotp\enskip}Aerospace Engineer}
+\address{Institute of Astronomy, University of Cambridge, Madingley Road, CB3 0HA, England}
+\mobile{(+44) 7598 640 323} 
+\email{andy@astrowizici.st}
+\homepage{astrowizici.st}
+\github{andycasey}
+\linkedin{andrew-casey}
 % \stackoverflow{SO-id}{SO-name}
-% \twitter{@twit}
-% \skype{skype-id}
-% \reddit{reddit-id}
 % \extrainfo{extra informations}
-
-\quote{``Must be the change that you want to see in the world."}
-
 
 %-------------------------------------------------------------------------------
 \begin{document}
 
-% Print the header with above personal informations
 \makecvheader
 
 % Print the footer with 3 arguments(<left>, <center>, <right>)
 % Leave any of these blank if they are not needed
 \makecvfooter
-  {\today}
-  {Claud D. Park~~~·~~~Curriculum Vitae}
+  {\today\\(auto-build \githash\ of \giturl)}
+  {Andrew R. Casey~~~·~~~Curriculum Vitae}
   {\thepage}
 
 
-%-------------------------------------------------------------------------------
-%	CV/RESUME CONTENT
-%	Each section is imported separately, open each file in turn to modify content
-%-------------------------------------------------------------------------------
+\input{cv/appointments.tex}
 \input{cv/education.tex}
-\input{cv/skills.tex}
-\input{cv/experience.tex}
-\input{cv/extracurricular.tex}
 \input{cv/honors.tex}
-\input{cv/presentation.tex}
-\input{cv/writing.tex}
-\input{cv/committees.tex}
+\input{cv/skills.tex}
+\clearpage
 
+\input{cv/seminars.tex}
+\input{cv/mentorship.tex}
+\clearpage
 
-%-------------------------------------------------------------------------------
+\input{cv/community.tex}
+\input{cv/observing.tex}
+\clearpage
+
+% publications
+
 \end{document}
