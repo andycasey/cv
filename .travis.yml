@@ -53,10 +53,10 @@ install:
  - sudo /opt/texbin/tlmgr update --all
  - sudo /opt/texbin/tlmgr update unicode-math
  - sudo /opt/texbin/tlmgr update xetex
+ - "export PATH=$PATH:/opt/texbin"
+ - which xelatex
 
 script:
-    - which pdflatex
-    - ls -l /opt/texbin/*
     - make
 
 after_success: |
