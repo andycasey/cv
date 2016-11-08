@@ -20,7 +20,7 @@ addons:
     apt:
         packages:
             - lmodern
-            - texlive-latex-xcolor
+            - texlive-full
             - texlive-latex-recommended
             - texlive-latex-extra
             - texlive-fonts-recommended
