@@ -15,5 +15,5 @@ vc.tex: .git/logs/HEAD
 	cat vc.tex | sed "s/^ewcommand/\\\newcommand/" > vc_safe.tex
 	mv vc_safe.tex vc.tex
 
-%.pdf: %.tex vc.tex
+%.pdf: %.tex vc.tex cv/*.tex
 	${LATEX} $<
