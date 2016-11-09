@@ -35,6 +35,7 @@ install:
  - sudo /opt/texbin/tlmgr update --all
  - sudo /opt/texbin/tlmgr update unicode-math
  - sudo /opt/texbin/tlmgr update xetex
+ - "export PATH=$PATH:/opt/texbin"
 
 #before_script: # configure a headless display to test plot generation
 #    - "export DISPLAY=:99.0"

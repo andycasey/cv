@@ -1,4 +1,4 @@
-LATEX       = /opt/texbin/xelatex
+LATEX       = xelatex
 
 all: cv.pdf
 
