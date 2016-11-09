@@ -1,6 +1,6 @@
 *.log
 *.swp
+*.pdf
 cv.aux
 cv.out
-cv.pdf
 vc.tex
