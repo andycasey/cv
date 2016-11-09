@@ -42,6 +42,7 @@ install:
 #    - sleep 3 # give xvfb some time to start
 
 script:
+    - git config --get remote.origin.url
     - make
 
 after_success: |
