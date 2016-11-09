@@ -1,0 +1,35 @@
+\cvsection{{Publications}}
+
+As of \today\ I have {N_publications} submitted or accepted publications with a total of {N_citations} citations (NASA/ADS).\\
+
+\vspace{{1em}}
+
+My $h$-index is {H_index}, which places me in the top 5\% of all Australian astronomers within 0--5 years post-PhD (Pimbblet 2011, PASA, 28, 140), despite currently being 2.5 years post-PhD.
+
+\vspace{{2em}}
+
+\cvsubsection{{First-author Publications ({N_first_author_publications})}}
+
+\begin{{cvhonors}}
+{first_author_publications_tex}	
+\end{{cvhonors}}
+
+\vspace{{2em}}
+
+\cvsubsection{{Second-author Publications ({N_second_author_publications})}}
+
+\begin{{cvhonors}}
+{second_author_publications_tex}
+\end{{cvhonors}}
+
+\clearpage
+
+\cvsubsection{{$N$th-author Publications ({N_nth_author_publications})}}
+
+\begin{{cvhonors}}
+{nth_author_publications_tex}
+\end{{cvhonors}}
+
+%\begin{{cvhonors}}
+%	\cvhonor{{title}}{{authors}}{{journal}}{{year}}
+%\end{{cvhonors}}
