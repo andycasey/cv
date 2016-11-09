@@ -4,13 +4,13 @@
 __author__ = "Andy Casey <andy@astrowizici.st>"
 
 import os
+import sys
 
 # Die if this is on Travis.
 if os.getenv("TRAVIS") or os.getenv("CI"):
     sys.exit(0)
 
 import ads
-import sys
 import unicodedata
 import yaml
 
