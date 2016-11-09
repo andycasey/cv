@@ -3,8 +3,14 @@
 
 __author__ = "Andy Casey <andy@astrowizici.st>"
 
-import ads
 import os
+
+# Die if this is on Travis.
+if os.getenv("TRAVIS") or os.getenv("CI"):
+    sys.exit(0)
+
+import ads
+import sys
 import unicodedata
 import yaml
 
@@ -26,7 +32,7 @@ def format_authors(article):
 articles = list(ads.SearchQuery(
     q="orcid:{}".format(orcid), 
     fl=ads.SearchQuery.DEFAULT_FIELDS + ["citation_count", "property", "pub"],
-    sort="pubdate+desc", rows=200))
+    sort="pubdate desc", rows=200))
 
 groups = {
     "1st": [],
@@ -89,7 +95,7 @@ with open(tex_template_path, "r") as fp:
         fp.write(new_contents)
 
 # If there is a change to cv/publications.tex, trigger a Travis build by commit.
-if new_contents != previous_contents:
+if new_contents != previous_contents: 
     print("Triggering new Travis build.")
 
     os.system("git add cv/publications.tex")
