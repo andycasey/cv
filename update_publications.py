@@ -22,7 +22,7 @@ tex_path, tex_template_path = ("cv/publications.tex", "cv/publications.tex.templ
 tex_row_template = "\cvpublication{{ \href{{{url}}}{{{title}}} }}{{{authors}}}{{{year}}}{{{N}}}\n"
 
 def ads_url(article):
-    return "https://adsabs.harvard.edu/abs/{}".format(article.identifier[0])
+    return "http://adsabs.harvard.edu/abs/{}".format(article.identifier[0])
 
 def format_authors(article):
     string = "; ".join(article.author[:10])
