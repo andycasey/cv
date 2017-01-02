@@ -21,8 +21,8 @@ orcid, last_name = ("0000-0003-0174-0564", "Casey")
 tex_path, tex_template_path = ("cv/publications.tex", "cv/publications.tex.template")
 tex_row_template = "\cvpublication{{ \href{{{url}}}{{{title}}} }}{{{authors}}}{{{year}}}{{{N}}}\n"
 
-def ads_url(article):
-    return "http://adsabs.harvard.edu/abs/{}".format(article.identifier[0])
+# The longest identifier is probably the most informative.
+ads_url = lambda a: "http://adsabs.harvard.edu/abs/{}".format(max(a.identifier, key=len))
 
 def format_authors(article):
     string = "; ".join(article.author[:10])
