@@ -68,6 +68,8 @@
 \RequirePackage{setspace}
 % Needed to manage fonts
 \RequirePackage[quiet]{fontspec}
+% Needed to stop tabular from overflowing to many pages
+\RequirePackage{longtable}
 % To support LaTeX quoting style
 \defaultfontfeatures{Ligatures=TeX}
 % Needed to manage math fonts
@@ -392,6 +394,15 @@
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
+\newcolumntype{T}[1]{>{\begin{minipage}[t]{#1}\raggedright{}}c<{\end{minipage}}}
+\newcolumntype{K}[1]{
+>{\begin{minipage}[t]{#1}\raggedleft{}\let\newline\\\arraybackslash}c<{\end{minipage}}}
+
+%>{\let\newline\\\arraybackslash\hspace{0pt}}m{0}}
+
+
+%>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+
 % Use to draw horizontal line with specific thickness
 \def\vhrulefill#1{\leavevmode\leaders\hrule\@height#1\hfill \kern\z@}
 
@@ -586,6 +597,28 @@
 \newcommand*{\cvhonor}[4]{%
   \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} \\
 }
+
+
+% Define an environment for cvpublications
+\newenvironment{cvpublications}{%
+  \vspace{\acvSectionContentTopSkip}
+  \vspace{-2mm}
+  \begin{center}
+    \setlength\tabcolsep{0pt}
+    \setlength{\extrarowheight}{0pt}
+    %\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}} C{1.5cm} L{\textwidth - 4.0cm} R{2.5cm}}
+    \begin{longtable}{@{\extracolsep{\fill}} T{1.5cm} T{\textwidth - 4.0cm} K{2.5cm}}
+}{%
+	\end{longtable}
+    %\end{tabular*}
+  \end{center}
+}
+% Define a line of cv information(honor, award or something else)
+\newcommand*{\cvpublication}[4]{%
+  \honordatestyle{#4} & \honorpositionstyle{#1}, \honortitlestyle{#2} & \honorlocationstyle{#3} \\
+}
+
+
 
 % Define an environment for cvskill
 \newenvironment{cvskills}{%
