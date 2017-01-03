@@ -19,7 +19,7 @@ orcid, last_name = ("0000-0003-0174-0564", "Casey")
 
 # Text formatting.
 tex_path, tex_template_path = ("cv/publications.tex", "cv/publications.tex.template")
-tex_row_template = "\cvpublication{{ \href{{{url}}}{{{title}}} }}{{{authors}}}{{{year}}}{{{N}}}\n"
+tex_row_template = "\cvpublication{{\href{{{url}}}{{{title}}}}}{{{authors}}}{{{year}}}{{{N}}}\n"
 
 # The longest identifier is probably the most informative.
 ads_url = lambda a: "http://adsabs.harvard.edu/abs/{}".format(max(a.identifier, key=len))
