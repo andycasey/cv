@@ -19,7 +19,7 @@ orcid, last_name = ("0000-0003-0174-0564", "Casey")
 
 # Text formatting.
 tex_path, tex_template_path = ("cv/publications.tex", "cv/publications.tex.template")
-tex_row_template = "\cvpublication{{\href{{{url}}}{{{title}}}}}{{{authors}}}{{{year}}}{{{N}}}\n"
+tex_row_template = u"\cvpublication{{\href{{{url}}}{{{title}}}}}{{{authors}}}{{{year}}}{{{N}}}\n"
 
 # The longest identifier is probably the most informative.
 ads_url = lambda a: "http://adsabs.harvard.edu/abs/{}".format(max(a.identifier, key=len))
@@ -33,7 +33,7 @@ def format_authors(article):
 
 # Search for articles.
 articles = list(ads.SearchQuery(
-    q="orcid:{}".format(orcid), 
+    q="orcid:{}".format(orcid),
     fl=ads.SearchQuery.DEFAULT_FIELDS + ["citation_count", "property", "pub"],
     sort="pubdate desc", rows=200))
 
@@ -42,6 +42,11 @@ groups = {
     "2nd": [],
     "Nth": []
 }
+
+try:
+    unicode
+except NameError:
+    unicode = lambda x: x
 
 citations = []
 for article in articles:
@@ -85,8 +90,9 @@ with open(tex_template_path, "r") as fp:
     template = fp.read()
     unicode_contents = unicode(template).format(**blanks)
 
-    new_contents = unicodedata.normalize('NFKD', unicode_contents).encode('ascii','ignore')
- 
+    new_contents = unicode_contents
+    #new_contents = unicodedata.normalize('NFKD', unicode_contents).encode('ascii','ignore')
+
     if os.path.exists(tex_path):
         with open(tex_path, "r") as fp:
             previous_contents = fp.read()
@@ -98,7 +104,7 @@ with open(tex_template_path, "r") as fp:
         fp.write(new_contents)
 
 # If there is a change to cv/publications.tex, trigger a Travis build by commit.
-if new_contents != previous_contents: 
+if new_contents != previous_contents:
     print("Triggering new Travis build.")
 
     os.system("git add cv/publications.tex")
